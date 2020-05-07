@@ -1,0 +1,19 @@
+{
+  "name": "projeto-video",
+  "version": "1.0.0",
+  "description": "O projeto cria um vídeo a partir de um tema que o usuário define",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilliamDCGomes/Criador-de-videos-automatico.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WilliamDCGomes/Criador-de-videos-automatico/issues"
+  },
+  "homepage": "https://github.com/WilliamDCGomes/Criador-de-videos-automatico#readme"
+}
