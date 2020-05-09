@@ -4,9 +4,12 @@ const robots = {
     text: require('./robots/text.js')
 }
 async function start(){
-    const content = {}
+    const content = {
+        maximumSentences: 7
+    }
     content.searchTerm = askAndReturnSearchTerm()
     content.prefix = askAndReturnPrefix()
+    content.lang = askandReturnLanguage()
 
     await robots.text(content)
     function askAndReturnSearchTerm(){
@@ -18,6 +21,12 @@ async function start(){
         const selectedPrefixText = prefixes[selectedPrefixIndex]
         return selectedPrefixText
     }
-    console.log(content)
+    function askandReturnLanguage(){
+        const language = ['pt', 'en']
+        const selectedLangIndex = readline.keyInSelect(language,'Choice Language: ')
+        const selectedLangText = language[selectedLangIndex]
+        return selectedLangText
+    }
+    console.log(JSON.stringify(content, null, 4))
 }
 start()
