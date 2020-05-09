@@ -9,17 +9,17 @@ function robot(){
     content.lang = askandReturnLanguage()
     state.save(content)
     function askAndReturnSearchTerm(){
-        return readline.question('Tyoe a Wikipedia search term: ')
+        return readline.question('Escolha o que deseja procurar: ')
     }
     function askAndReturnPrefix(){
-        const prefixes = ['Who is', 'What is', 'The history of']
-        const selectedPrefixIndex = readline.keyInSelect(prefixes, 'Choose one option: ')
+        const prefixes = ['Quem eh', 'O que eh', 'A historia de(a)']
+        const selectedPrefixIndex = readline.keyInSelect(prefixes, 'Escolha uma opcao: ')
         const selectedPrefixText = prefixes[selectedPrefixIndex]
         return selectedPrefixText
     }
     function askandReturnLanguage(){
         const language = ['pt', 'en']
-        const selectedLangIndex = readline.keyInSelect(language,'Choice Language: ')
+        const selectedLangIndex = readline.keyInSelect(language,'Escolha uma linguagem: ')
         const selectedLangText = language[selectedLangIndex]
         return selectedLangText
     }
