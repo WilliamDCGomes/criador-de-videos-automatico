@@ -1,0 +1,12 @@
+Log de renderização do Adobe After Effects v17.0 Windows 64 para o projeto“template.aep”
+
+Renderização iniciada em 10/05/2020 às 14:17:49
+
+  10/05/2020 14:17:49: iniciando composição “main”.
+
+  Configurações de renderização: Sem título 1  Qualidade: Melhor  Resolução: Total  Tamanho: 1920 x 1080  Uso do proxy: Não usar substitutos  Efeitos: Configurações atuais  Cache de disco: Somente leitura  Profundidade de cor: Configurações atuais  Mesclagem de quadros: Ativado para camadas selecionadas  Renderização de campo: Desativado  Pulldown: Desativado  Desfoque de movimento: Ativado para camadas selecionadas  Isolamentos: Configurações atuais  Período de tempo: Espaço de trabalho  Início: 0:00:00:00  Fim: 0:01:14:29  Duração: 0:01:15:00  Taxa de quadros: 30,00 (composição)  Camadas de guia: Tudo desativado  Ignorar arquivos existentes: Desativado    Módulo de saída: Lossless  Saída para: C:\Users\willi\Desktop\Programing\Projeto Video\content\output.mov  Formato: QuickTime  Informações de saída: -  Incluir: Link do projeto  Áudio de saída: 48.000 kHz / 16 bit / Estéreo  Canais: -  Profundidade: -  Cor: -  Redimensionar: -  Cortar: -  Tamanho final: -  Perfil: -  Ação de pós-renderização: Nenhum    0:00:00:00 (1): 0 segundos  0:00:17:00 (511): 0 segundos  0:00:55:00 (1651): 1 segundos  10/05/2020 14:17:51: composição concluída “main”.
+
+
+  Tempo total decorrido: 2 segundos
+Log fechado em 10/05/2020 às 14:17:51
+
