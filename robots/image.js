@@ -5,7 +5,7 @@ const customSearch = google.customsearch('v1')
 const state = require('./state.js')
 const googleSearchCredentials = require('../credentials/google-search.json')
 async function robot(){
-    console.log('> [image-robot] Iniciando...')
+    console.log('> [Robo de imagens] Iniciando...')
     const content = state.load()
     await fetchImagesOfAllSentences(content)
     await downloadAllImages(content)
@@ -19,7 +19,7 @@ async function robot(){
             else{
                 query = `${content.searchTerm} ${content.sentences[sentenceIndex].keywords[0]}`
             }
-            console.log(`> [image-robot] Procurando no Google Imagens com a expressao: "${query}"`)
+            console.log(`> [Robo de imagens] Procurando no Google Imagens com a expressao: "${query}"`)
             content.sentences[sentenceIndex].images = await fetchGoogleAndReturnImagesLinks(query)
             content.sentences[sentenceIndex].googleSearchQuery = query
         }
@@ -49,10 +49,10 @@ async function robot(){
                     }
                     await downloadAndSave(imageUrl, `${sentenceIndex}-original.png`)
                     content.downloadedImages.push(imageUrl)
-                    console.log(`> [image-robot] [${sentenceIndex}][${imageIndex}] Baixou imagem com sucesso: ${imageUrl}`)
+                    console.log(`> [Robo de imagens] [${sentenceIndex}][${imageIndex}] Baixou imagem com sucesso: ${imageUrl}`)
                     break
                 }catch(error){
-                    console.log(`> [image-robot] [${sentenceIndex}][${imageIndex}] Erro ao baixar (${imageUrl}): ${error}`)
+                    console.log(`> [Robo de imagens] [${sentenceIndex}][${imageIndex}] Erro ao baixar (${imageUrl}): ${error}`)
                 }
             }
         }

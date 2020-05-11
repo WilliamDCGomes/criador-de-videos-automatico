@@ -10,7 +10,7 @@ const nlu = new NaturalLanguageUnderstandingV1({
 })
 const state = require('./state.js')
 async function robot(){
-    console.log('> [text-robot] Iniciando...')
+    console.log('> [Robo de texto] Iniciando...')
     const content = state.load()
     await fetchContentFromWikipedia(content)
     sanitizeContent(content)
@@ -19,7 +19,7 @@ async function robot(){
     await fetchKeywordsOfAllSentences(content)
     state.save(content)
      async function fetchContentFromWikipedia(content){
-        console.log('> [text-robot] Buscando conteudo na Wikipedia')
+        console.log('> [Robo de texto] Buscando conteudo na Wikipedia')
         const algorithmiaAuthenticated = algorithmia(algorithmiaApiKey)
         const wikipediaAlgorithm = algorithmiaAuthenticated.algo('web/WikipediaParser/0.1.2')
         const wikipediaResponse = await wikipediaAlgorithm.pipe({
@@ -28,7 +28,7 @@ async function robot(){
         })
         const wikipediaContent = wikipediaResponse.get()
         content.sourceContentOriginal = wikipediaContent.content
-        console.log('> [text-robot] Busca concluida!')
+        console.log('> [Robo de texto] Busca concluida!')
     }
     function sanitizeContent(content){
         const withoutBlankLinesAndMarkdown = removeBlankLinesAndMarkdown(content.sourceContentOriginal)
@@ -64,11 +64,11 @@ async function robot(){
         content.sentences = content.sentences.slice(0, content.maximumSentences)
     }
     async function fetchKeywordsOfAllSentences(content){
-        console.log('> [text-robot] Iniciando busca por palavras chaves no Watson')
+        console.log('> [Robo de texto] Iniciando busca por palavras chaves no Watson')
         for(const sentence of content.sentences){
-            console.log(`> [text-robot] Expressao: "${sentence.text}"`)
+            console.log(`> [Robo de texto] Expressao: "${sentence.text}"`)
             sentence.keywords = await fetchWatsonAndReturnKeywords(sentence.text)
-            console.log(`> [text-robot] Palavras chaves: ${sentence.keywords.join(', ')}\n`)
+            console.log(`> [Robo de texto] Palavras chaves: ${sentence.keywords.join(', ')}\n`)
         }
     }
     async function fetchWatsonAndReturnKeywords(sentence){

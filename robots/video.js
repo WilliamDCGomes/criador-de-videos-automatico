@@ -6,7 +6,7 @@ const os = require('os');
 const rootPath = path.resolve(__dirname, '..')
 const fromRoot = relPath => path.resolve(rootPath, relPath)
 async function robot() {
-  console.log('> [video-robot] Iniciando...')
+  console.log('> [Robo de video] Iniciando...')
   const content = state.load()
   await convertAllImages(content)
   await createAllSentenceImages(content)
@@ -49,7 +49,7 @@ async function robot() {
           if (error) {
             return reject(error)
           }
-          console.log(`> [video-robot] Imagem convertida: ${outputFile}`)
+          console.log(`> [Robo de video] Imagem convertida: ${outputFile}`)
           resolve()
         })
     })
@@ -103,7 +103,7 @@ async function robot() {
           if (error) {
             return reject(error)
           }
-          console.log(`> [video-robot] Expressao criada: ${outputFile}`)
+          console.log(`> [Robo de video] Expressao criada: ${outputFile}`)
           resolve()
         })
     })
@@ -116,7 +116,7 @@ async function robot() {
           if (error) {
             return reject(error)
           }
-          console.log('> [video-robot] Thumbnail do YouTube criada')
+          console.log('> [Robo de video] Thumbnail do YouTube criada')
           resolve()
         })
     })
@@ -129,7 +129,7 @@ async function robot() {
       const aerenderFilePath = '/Program Files/Adobe/Adobe After Effects 2020/Support Files/aerender'
       const templateFilePath = `${rootPath}/templates/1/template.aep`
       const destinationFilePath = `${rootPath}/content/output.mov`
-      console.log('> [video-robot] Iniciando After Effects')
+      console.log('> [Robo de video] Iniciando After Effects')
       const aerender = spawn(aerenderFilePath, [
         '-comp', 'main',
         '-project', templateFilePath,
@@ -139,7 +139,7 @@ async function robot() {
         process.stdout.write(data)
       })
       aerender.on('close', () => {
-        console.log('> [video-robot] After Effects fechado')
+        console.log('> [Robo de video] After Effects fechado')
         resolve()
       })
     })
