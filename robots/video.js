@@ -126,7 +126,7 @@ async function robot() {
   }
   async function renderVideoWithAfterEffects() {
     return new Promise((resolve, reject) => {
-      const aerenderFilePath = '/Program Files/Adobe/Adobe After Effects 2020/Support Files/aerender'
+      const aerenderFilePath = 'D:/Programas Instalados/Adobe After Effects 2020/Support Files/aerender'
       const templateFilePath = `${rootPath}/templates/1/template.aep`
       const destinationFilePath = `${rootPath}/content/output.mov`
       console.log('> [Robo de video] Iniciando After Effects')
